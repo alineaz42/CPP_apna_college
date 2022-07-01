@@ -5,6 +5,7 @@ using namespace std;
 
 int main()
 {
+    /*
     for (int d = 1; d <= 31; d++)
     {
         if (d % 2 == 0)
@@ -38,5 +39,44 @@ int main()
         }
         cout << i << endl;
     }
+    */
+    /*
+     // finding prime or non-prime numbers
+     int i, n;
+     cout << "Enter n: " << endl;
+     cin >> n;
+     for (i = 2; i < n; i++)
+     {
+         if (n % i == 0)
+         {
+             cout << "Non prime" << endl;
+             break;
+         }
+     }
+     if (i == n)
+     {
+         cout << "Prime" << endl;
+     }
+     */
+    // printing prime number between a and b
+    int a, b, i, num;
+    cout << "Enter a and b: \n";
+    cin >> a >> b;
+    for (int i = a; i <= b; i++)
+    {
+        int j;
+        for (j = 2; j < i; j++)
+        {
+            if (i % j == 0)
+            {
+                break;
+            }
+        }
+        if (i == j)
+        {
+            cout << i << endl;
+        }
+    }
+
     return 0;
 }
