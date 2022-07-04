@@ -86,7 +86,49 @@ int main()
         }
         cout << endl;
     }
+
     */
+    // pattern 6 star
+    /*
+    for (i = 1; i <= n; i++)
+    {
+        for (j = 1; j <= n - i; j++)
+        {
+            cout << "  ";
+        }
+        for (j = 1; j <= 2 * i - 1; j++)
+        {
+            cout << "* ";
+        }
+        cout << endl;
+    }
+    for (i = n; i >= 1; i--)
+    {
+        for (j = 1; j <= n - i; j++)
+        {
+            cout << "  ";
+        }
+        for (j = 1; j <= 2 * i - 1; j++)
+        {
+            cout << "* ";
+        }
+        cout << endl;
+    }
+    */
+    // pattern 7 zig zag patern
+    for (i = 1; i <= 3; i++)
+    {
+        for (j = 1; j <= 9; j++)
+        {
+            if ((i + j) % 4 == 0 || (i == 2 && j % 4 == 0))
+            {
+                cout << "* ";
+            }
+            else
+                cout << "  ";
+        }
+        cout << endl;
+    }
 
     return 0;
 }
