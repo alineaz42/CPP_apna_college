@@ -40,5 +40,5 @@ int main(){
     cout<<"Enter a and b: \n";
     cin>>a>>b;
     cout<<"Max: "<<max(a,b)<<"Min "<<min(a,b)<<endl;
-     return 0;
+    return 0;
 }
