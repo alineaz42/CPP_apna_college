@@ -111,5 +111,54 @@ int main(){
     }
     */
     // second part
+    for(i=1;i<=n;i++){
+        for(j=1;j<=i;j++){
+            cout<<j<<" ";
+        }
+        cout<<endl;
+    }
+    for(i=1;i<=n;i++){
+        for(j=1;j<=i;j++){
+            if((i+j)%2==0){
+                cout<<1<<" ";
+            }else{
+                cout<<0<<" ";
+            }
+            
+        }
+        cout<<endl;
+    }
+    for(i=1;i<=n;i++){
+        for(j=1;j<=i;j++){
+            if((i+j)%2==0){
+                cout<<0<<" ";
+            }
+            else{
+                cout<<1<<" ";
+            }
+        }
+        cout<<endl;
+    }
+    cout<<endl;
+    for(i=1;i<=n;i++){
+        for(j=1;j<=n;j++){
+            if((i+j)%2==0){
+                cout<<1<<" ";
+            }else{
+                cout<<0<<" ";
+            }
+        }
+        cout<<endl;
+    }
+    // rombus pattern
+    for(i=1;i<=n;i++){
+        for(j=1;j<=n-i;j++){
+            cout<<" ";
+        }
+        for(j=1;j<=n;j++){
+            cout<<"* ";
+        }
+        cout<<endl;
+    }
     return 0;
 }
