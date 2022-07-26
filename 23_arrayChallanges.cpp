@@ -1,3 +1,16 @@
+//longest arithmatic subarray
+#include<iostream>
+
+
+using namespace std;
+
+
+int main(){
+    
+    return 0;
+}
+
+/*
 // sum of every subarray
 #include<iostream>
 
@@ -22,6 +35,7 @@ int main(){
     }
     return 0;
 }
+*/
 /*
 #include<iostream>
 // every sub array is a sub sequence but every sub sequence is not a sub array
