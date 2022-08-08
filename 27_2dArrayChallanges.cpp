@@ -22,9 +22,7 @@ void transpose(){
         cout<<endl;
     }
 }
-
-int main(){
-    // transpose();
+void mult_matrix(){
     int n1,n2,n3;
     cout<<"Enter n1,n2,n3: \n";
     cin>>n1>>n2>>n3;
@@ -51,15 +49,53 @@ int main(){
     for(int i=0;i<n1;i++){
         for(int j=0;j<n3;j++){
             for(int k=0;k<n2;k++){
-                ans[i][j]+= m1[i][k]+m2[k][j];
+                ans[i][j]+= m1[i][k]*m2[k][j];
             }
         }
     }
     for(int i=0;i<n1;i++){
         for(int j=0;j<n3;j++){
-            cout<<ans[i][j];
+            cout<<ans[i][j]<<"  ";
         }
         cout<<endl;
     }
+}
+    /*
+    Given a nXm matrix. Write an algorithm to find that the given value exists in the matrix
+    or not.
+    Integers in each row are sorted in ascending from left to right.
+    Integers in each column are sorted in ascending from top to bottom.
+    */
+void matrixSearch(){
+    int n,m;cout<<"Enter n,m";cin>>n>>m;
+    int target;cout<<"Enter target";cin>>target;
+    int a[n][m];
+    cout<<"Enter the matrix";
+    for(int i=0;i<n;i++){
+        for(int j=0;j<m;j++){
+            cin>>a[i][j];
+        }
+    }
+    int r=0,c=m-1;
+    bool flag=false;
+    while(r<n && c>=0){
+        if(a[r][c]==target){
+            flag = true;
+        }else if(a[r][c]>target){
+            c--;
+        }else{
+            r++;
+        }
+    }
+    if(flag){
+        cout<<"Found"<<endl;
+    }else{
+        cout<<"Not Found"<<endl;
+    }
+}
+int main(){
+    // transpose();
+    // mult_matrix();
+    matrixSearch();
     return 0;
 }
