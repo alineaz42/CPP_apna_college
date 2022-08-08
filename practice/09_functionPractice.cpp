@@ -29,21 +29,21 @@ int binaryToDecimal(int n){
     }
     return des;
 }
-int decimalToBinary(int n){
-    int x=1;
-    int ans=0;
-    while(x<=n){
-        x*=2;
-    }
-    x/=2;
-    while(x>0){
-        int lastDigit = n/x;
-        n-=lastDigit*x;
-        x/=2;
-        ans=ans*10+lastDigit;
-    }
-    return ans;
-}
+// int decimalToBinary(int n){
+//     int x=1;
+//     int ans=0;
+//     while(x<=n){
+//         x*=2;
+//     }
+//     x/=2;
+//     while(x>0){
+//         int lastDigit = n/x;
+//         n-=lastDigit*x;
+//         x/=2;
+//         ans=ans*10+lastDigit;
+//     }
+//     return ans;
+// }
 int decimalToOctal(int n){
     int x=1;
     int ans=0;
@@ -59,6 +59,7 @@ int decimalToOctal(int n){
     }
     return ans;
 }
+/*
 int decimalToHexadecimal(int n){
     int x=1;
     int ans = 0;
@@ -79,6 +80,84 @@ int decimalToHexadecimal(int n){
     }
     return ans;
 }
+*/
+int max(int a,int b){
+    if(a>b){
+        return a;
+    }
+    return b;
+}
+
+bool pythgoreanTriplet(){
+    int a,b,c;cin>>a>>b>>c;
+    float hypotenus = max(a,max(b,c));
+    int base,opposit;
+    if(hypotenus==a){
+        base=b;opposit=c;
+    }else if(hypotenus==b){
+        base=c;opposit=a;
+    }else{
+        base = b;
+        opposit=a;
+    }
+
+    if(pow(hypotenus,2)==pow(base,2)+pow(opposit,2)){
+        return true;
+    }
+    return false;
+
+}
+int decimalToBinary(int n){
+    int base=2;
+    while(base<n){
+        base*=2;
+    }
+    base/=2;
+    int ans=0;
+    while(n!=0){
+        int rem = n/base;
+        ans = ans*10+rem;
+        n/=2;
+    }
+    return ans;
+}
+void hexToDecimal(){
+    string n;cout<<"Enter n:\n";
+    cin>>n;
+    int ans=0,x=1;
+    int s= n.size();
+    for(int i=s-1;i>=0;i--){
+        if(n[i]>='0'&&n[i]<='9'){
+            ans +=x*(n[i]-'0');
+        }else if(n[i]>='A' && n[i]<='F'){
+            ans += x*(n[i]-'A'+10);
+        }
+        x*=16;
+    }
+    cout<<ans<<endl;
+
+}
+// incomplete
+/*
+void decimalToHexadecimal(){
+    int n;
+    cout<<"Enter n\n";
+    cin>>n;
+    int x=1;
+    string ans = "";
+    while(x<=n){
+        x *=16;
+    }
+    x /= 16;
+    while(x>0){
+        int lastDigit = n/x;
+        n -= lastDigit*x;
+        x /= 16;
+    }
+    
+
+}
+*/
 int main(){
     // pythagorean triplet
     // int a,b,c;
@@ -91,13 +170,35 @@ int main(){
 
     // binary to decimal
     // int n;
-    // cin>>n;
+    // cin>>n;s
     // cout<<binaryToDecimal(n)<<endl;
     // decimal to binary 
-    int n;
-    cin>>n;
+    // int n;
+    // cin>>n;
     // cout<<decimalToBinary(n)<<endl;
     // cout<<decimalToOctal(n)<<endl;
     // cout<<decimalToHexadecimal(n)<<endl;
+
+    //------------------------------------------//
+    //-------------advance functions------------//
+    //-----------------------------------------//
+
+    // 1. pythagorean triplet
+    // bool flag =pythgoreanTriplet();
+    // if(flag){
+    //     cout<<"Pythargoean Triplet"<<" ";
+    // }else{
+    //     cout<<"Not pythagorean Triplet"<<" ";
+    // }
+    // 2. decimal to binary
+    // int n;
+    // cin>>n;
+    // cout<<decimalToBinary(n)<<endl;
+
+    //3. Hexadecimal To Deciaml
+    // hexToDecimal();
+
+    //4. add two binary number
+    
     return 0;
 }

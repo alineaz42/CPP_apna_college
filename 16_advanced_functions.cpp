@@ -94,5 +94,5 @@ int main(){
     int n;
     cin>>n;
     cout<<decimalToBinary<<endl;
-     return 0;
+    return 0;
 }
